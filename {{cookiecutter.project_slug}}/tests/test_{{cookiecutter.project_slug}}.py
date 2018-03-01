@@ -55,12 +55,16 @@ class Test{{ cookiecutter.project_slug|title }}(unittest.TestCase):
 
     def setUp(self):
         """Set up test fixtures, if any."""
+        pass
 
     def tearDown(self):
         """Tear down test fixtures, if any."""
+        pass
 
     def test_000_something(self):
         """Test something."""
+        pass
+
 {%- if cookiecutter.command_line_interface|lower == 'click' %}
 
     def test_command_line_interface(self):
@@ -73,4 +77,10 @@ class Test{{ cookiecutter.project_slug|title }}(unittest.TestCase):
         assert help_result.exit_code == 0
         assert '--help  Show this message and exit.' in help_result.output
 {%- endif %}
+{%- endif %}
+
+{%- if cookiecutter.use_pytest != 'y' %}
+
+if __name__ == "__main__":
+    unittest.main(Test{{ cookiecutter.project_slug|title }})
 {%- endif %}
