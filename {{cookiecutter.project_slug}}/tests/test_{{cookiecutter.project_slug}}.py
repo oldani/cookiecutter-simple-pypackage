@@ -82,5 +82,5 @@ class Test{{ cookiecutter.project_slug|title }}(unittest.TestCase):
 {%- if cookiecutter.use_pytest != 'y' %}
 
 if __name__ == "__main__":
-    unittest.main(Test{{ cookiecutter.project_slug|title }})
+    unittest.main()
 {%- endif %}

@@ -53,11 +53,10 @@ Ready to contribute? Here's how to set up `{{ cookiecutter.project_slug }}` for 
 
         $ git clone git@github.com:your_name_here/{{ cookiecutter.project_slug }}.git
 
-3. Install your local copy into a virtualenv. Assuming you have virtualenvwrapper installed, this is how you set up your fork for local development::
+3. Install development dependencies:
 
-        $ mkvirtualenv {{ cookiecutter.project_slug }}
         $ cd {{ cookiecutter.project_slug }}/
-        $ python setup.py develop
+        $ pipenv install --dev
 
 4. Create a branch for local development::
 
@@ -72,7 +71,7 @@ Ready to contribute? Here's how to set up `{{ cookiecutter.project_slug }}` for 
         $ python setup.py test or py.test
         $ tox
 
-    To get flake8 and tox, just pip install them into your virtualenv.
+    To just run test quickly you can run `python tests/test_{{ cookiecutter.project_slug }}.py`
 
 6. Commit your changes and push your branch to GitHub::
 
